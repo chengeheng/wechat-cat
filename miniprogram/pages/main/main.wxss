@@ -1,1 +1,119 @@
 /* miniprogram/pages/main/main.wxss */
+
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #f4f4f4;
+}
+
+/* 轮播图 */
+.swiper {
+	width: 100%;
+	height: 380rpx;
+}
+.banner {
+	height: 100%;
+}
+.banner_image {
+	width: 100%;
+	height: 100%;
+}
+
+/* 资助对象 */
+.funt_cat_item {
+	min-height: 400rpx;
+	width: 100%;
+	margin-top: 10rpx;
+	display: flex;
+	flex-direction: column;
+}
+.fund_cat_photo {
+	height: 320rpx;
+	width: 100%;
+}
+.fund_cat_image {
+	height: 100%;
+	width: 100%;
+}
+
+.fund_cat_name {
+	padding-left: 10rpx;
+	line-height: 60rpx;
+}
+.fund_cat_des {
+	padding-left: 10rpx;
+	line-height: 40rpx;
+	font-size: 30rpx;
+	color: #c7c7c7;
+}
+/* 众筹 */
+.fund {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	margin: 20rpx 0 0;
+}
+.fund_title {
+	height: 100rpx;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1rpx solid #dddcdc;
+}
+.fund_title_body::before {
+	content: "-";
+	color: #d4d4d4;
+	padding-right: 10rpx;
+}
+.fund_title_body::after {
+	content: "-";
+	color: #d4d4d4;
+	padding-left: 10rpx;
+}
+
+.fund_top {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	height: 150rpx;
+	border-bottom: 1rpx solid #dddcdc;
+}
+.fund_top_title {
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.fund_top_avatar {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.fund_top_avatar_img {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+}
+
+.fund_detail {
+	height: 80rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.fund_detail_title {
+	height: 80rpx;
+	line-height: 80rpx;
+	width: 60%;
+	padding-left: 20rpx;
+}
+.fund_detail_cost {
+	height: 80rpx;
+	line-height: 80rpx;
+	width: 40%;
+}

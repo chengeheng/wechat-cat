@@ -22,5 +22,22 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "custom": true,
+     "list": [
+      {
+      "pagePath": "pages/main/main",
+      "iconPath": "images/tabbar/main.png",
+      "selectedIconPath": "images/tabbar/main.png",
+      "text": "主页"
+      },
+      {
+      "pagePath": "pages/index/index",
+      "iconPath": "images/tabbar/user.png",
+      "selectedIconPath": "images/tabbar/user.png",
+      "text": "用户"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }
