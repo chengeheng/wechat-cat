@@ -1,0 +1,32 @@
+<!-- miniprogram/pages/strayCat/strayCat.wxml -->
+<!-- 流浪猫信息登记 -->
+<view class="form">
+    <view class="form-item">
+        <view class="form-item-title-request">姓名</view>
+        <view class="form-item-body">
+            <input bindblur="bindNameBlur" placeholder="请输入姓名">{{name}}</input>
+        </view>
+    </view>
+    <view class="form-item">
+        <view class="form-item-title-request">描述</view>
+        <view class="form-item-body">
+            <textarea bindblur="bindDescriptionBlur" placeholder="请输入描述信息">
+                {{description}}
+            </textarea>
+        </view>
+    </view>
+    <view class="form-image">
+        <view class="form-image-uploader">
+            <mp-cells>
+                <mp-cell>
+                    <mp-uploader bindfail="uploadError" binddelete="uploadDelete" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" max-count="9" title="图片上传" tips="最多可上传9张图片"></mp-uploader>
+                </mp-cell>
+            </mp-cells>
+        </view>
+    </view>
+    <view class="form-submit">
+        <button class="form-submit-button" type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="onSubmit">
+            提交
+        </button>
+    </view>
+</view>

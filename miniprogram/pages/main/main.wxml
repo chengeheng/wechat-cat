@@ -4,7 +4,7 @@
         <swiper class="banner" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
             <block wx:for="{{bannerImages}}" wx:key="key">
                 <swiper-item>
-                    <image class="banner_image" src="{{item.fileID}}" />
+                    <image class="banner_image" src="{{item.url}}" />
                 </swiper-item>
             </block>
         </swiper>
@@ -19,7 +19,11 @@
                 <view class="fund_cat_name">{{item.name}}</view>
                 <view class="fund_cat_des">{{item.description}}</view>
                 <view class="fund_cat_photo">
-                    <image class="fund_cat_image" src="{{item.fileID}}" />
+                    <mp-cells>
+                        <mp-cell>
+                            <mp-uploader files="{{item.files}}" title=" " showUpload="{{false}}" max-count="9"></mp-uploader>
+                        </mp-cell>
+                    </mp-cells>
                 </view>
             </view>
         </block>

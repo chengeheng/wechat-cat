@@ -52,8 +52,11 @@ Page({
 		const catImages = db.collection("catImages");
 		catImages.get().then(res => {
 			const { data } = res;
-			const bannerImages = data.slice(0, 3).reverse();
-			console.log(bannerImages);
+			let imagas = [];
+			data.forEach(item => {
+				imagas = imagas.concat(item.files);
+			});
+			const bannerImages = imagas.slice(0, 3).reverse();
 			this.setData({
 				bannerImages: bannerImages,
 				catLists: data

@@ -4,5 +4,5 @@
 		"mp-cells": "../components/cells/cells",
 		"mp-cell": "../components/cell/cell"
 	},
-	"navigationBarTitleText": "众筹页面"
+	"navigationBarTitleText": "流浪猫信息登记"
 }
