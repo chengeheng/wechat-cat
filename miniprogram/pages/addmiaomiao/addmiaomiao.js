@@ -1,11 +1,10 @@
-// miniprogram/pages/strayCat/strayCat.js
+// miniprogram/pages/addmiaomiao/addmiaomiao.js
 Page({
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
 		files: [],
-		name: "",
 		description: "",
 		hasSubmit: false
 	},
@@ -91,14 +90,7 @@ Page({
 		});
 	},
 	onSubmit: function() {
-		const { name, files, description } = this.data;
-		if (!name) {
-			wx.showToast({
-				title: "请输入流浪猫姓名（可现编）",
-				icon: "none"
-			});
-			return;
-		}
+		const { files, description } = this.data;
 		if (files.length == 0) {
 			wx.showToast({
 				title: "请上传图片（可上传自拍）",
@@ -107,11 +99,10 @@ Page({
 			return;
 		}
 		const db = wx.cloud.database();
-		const catImages = db.collection("catImages");
-		catImages
+		const catInfo = db.collection("catInfo");
+		catInfo
 			.add({
 				data: {
-					name: name,
 					files: files,
 					description: description,
 					updateTime: new Date().valueOf()
@@ -122,7 +113,7 @@ Page({
 					hasSubmit: true
 				});
 				wx.switchTab({
-					url: "../main/main"
+					url: "../index/index"
 				});
 			});
 	},

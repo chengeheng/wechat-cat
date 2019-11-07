@@ -1,21 +1,19 @@
-<!-- miniprogram/pages/strayCat/strayCat.wxml -->
-<!-- 流浪猫信息登记 -->
+<!-- miniprogram/pages/catFood/catFood.wxml -->
+<!-- 喵粮详情 -->
 <view class="form">
     <view class="form-item">
-        <view class="form-item-title-request">姓名</view>
+        <view class="form-item-title-request">喵粮品种</view>
         <view class="form-item-body">
-            <input bindblur="bindNameBlur" placeholder="请输入姓名">{{name}}</input>
+            <input class="form-item-body-text" auto-focus bindblur="bindNameBlur" placeholder="请输入喵粮品种"></input>
         </view>
     </view>
     <view class="form-item">
-        <view class="form-item-title-request">描述</view>
+        <view class="form-item-title-request">花费</view>
         <view class="form-item-body">
-            <textarea class="form-item-body-text " bindblur="bindDescriptionBlur" auto-height="{{true}}" placeholder="请输入描述信息">
-                {{description}}
-            </textarea>
+            <input class="form-item-body-text" type="number" bindblur="bindCostBlur" placeholder="请输入花费"></input>
         </view>
     </view>
-    <view class="form-image">
+    <!-- <view class="form-image">
         <view class="form-image-uploader">
             <mp-cells>
                 <mp-cell>
@@ -23,7 +21,7 @@
                 </mp-cell>
             </mp-cells>
         </view>
-    </view>
+    </view> -->
     <view class="form-submit">
         <button class="form-submit-button" type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="onSubmit">
             提交

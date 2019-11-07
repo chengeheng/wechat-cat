@@ -11,10 +11,10 @@ Component({
 				text: "主页"
 			},
 			{
-				pagePath: "/pages/index/index",
+				pagePath: "/pages/miaomiao/miaomiao",
 				iconPath: "/images/tabbar/user.png",
 				selectedIconPath: "/images/tabbar/user.png",
-				text: "列表"
+				text: "妙妙日记"
 			},
 			{
 				pagePath: "/pages/index/index",

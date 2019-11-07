@@ -13,42 +13,28 @@
       <view class="userinfo-nickname">{{userInfo.nickName}}</view>
     </view>
   </view>
-  <!-- 上传图片 -->
+  <!-- 上传流浪猫信息 -->
   <block wx:if="{{isAdmin}}">
     <view class="uploader">
       <navigator url="../strayCat/strayCat" open-type="navigate" class="uploader-text">
         <text>上传流浪猫信息</text>
       </navigator>
-      <!-- <view class="uploader-text" bindtap="doUpload">
-        <text>上传流浪猫信息</text>
-      </view>
-      <view class="uploader-container" wx:if="{{imgUrl}}">
-        <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-      </view> -->
     </view>
   </block>
-  <!-- 操作数据库 -->
-  <view class="uploader">
-    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
-      <text>前端操作数据库</text>
-    </navigator>
-  </view>
-  <!-- 即时通信 -->
-  <view class="uploader">
-    <navigator url="../im/im" open-type="navigate" class="uploader-text">
-      <text>即时通信 Demo</text>
-    </navigator>
-  </view>
-  <!-- 新建云函数 -->
-  <view class="uploader">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>快速新建云函数</text>
-    </navigator>
-  </view>
-  <!-- 云调用 -->
-  <view class="uploader">
-    <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
-      <text>云调用</text>
-    </navigator>
-  </view>
+  <!-- 上传妙妙 -->
+  <block wx:if="{{isAdmin}}">
+    <view class="uploader">
+      <navigator url="../addmiaomiao/addmiaomiao" open-type="navigate" class="uploader-text">
+        <text>上传妙妙日记</text>
+      </navigator>
+    </view>
+  </block>
+  <!-- 上传喵粮详情 -->
+  <block wx:if="{{isAdmin}}">
+    <view class="uploader">
+      <navigator url="../catFood/catFood" open-type="navigate" class="uploader-text">
+        <text>上传喵粮详情</text>
+      </navigator>
+    </view>
+  </block>
 </view>

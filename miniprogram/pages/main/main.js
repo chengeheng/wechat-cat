@@ -11,19 +11,9 @@ Page({
 		interval: 3000,
 		duration: 500,
 		catLists: [],
-		fundList: [
-			{
-				name: "猫粮",
-				cost: 200
-			}
-		]
+		fundList: []
 	},
 
-	onGotUserInfo: function(e) {
-		console.log(e.detail.errMsg);
-		console.log(e.detail.userInfo);
-		console.log(e.detail.rawData);
-	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
@@ -50,6 +40,14 @@ Page({
 
 		const db = wx.cloud.database();
 		const catImages = db.collection("catImages");
+		const catFood = db.collection("catFood");
+		catFood.get().then(res => {
+			const { data } = res;
+			console.log(data);
+			this.setData({
+				fundList: data
+			});
+		});
 		catImages.get().then(res => {
 			const { data } = res;
 			let imagas = [];

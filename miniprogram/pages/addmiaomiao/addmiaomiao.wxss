@@ -1,4 +1,4 @@
-/* miniprogram/pages/strayCat/strayCat.wxss */
+/* miniprogram/pages/addmiaomiao/addmiaomiao.wxss */
 page {
 	background: #e9b878;
 	display: flex;

@@ -1,4 +1,4 @@
-// miniprogram/pages/strayCat/strayCat.js
+// miniprogram/pages/catFood/catFood.js
 Page({
 	/**
 	 * 页面的初始数据
@@ -6,7 +6,7 @@ Page({
 	data: {
 		files: [],
 		name: "",
-		description: "",
+		cost: "",
 		hasSubmit: false
 	},
 	uploadDelete(files) {
@@ -84,46 +84,75 @@ Page({
 		this.setData({
 			name: e.detail.value
 		});
+		console.log(this.data);
 	},
-	bindDescriptionBlur: function(e) {
+	bindCostBlur: function(e) {
 		this.setData({
-			description: e.detail.value
+			cost: e.detail.value
 		});
 	},
 	onSubmit: function() {
-		const { name, files, description } = this.data;
+		const { name, cost } = this.data;
+		let costNum = parseInt(cost);
 		if (!name) {
 			wx.showToast({
-				title: "请输入流浪猫姓名（可现编）",
+				title: "请输入喵粮品种",
 				icon: "none"
 			});
 			return;
 		}
-		if (files.length == 0) {
+		if (!costNum) {
 			wx.showToast({
-				title: "请上传图片（可上传自拍）",
+				title: "请输入价格",
 				icon: "none"
 			});
 			return;
 		}
 		const db = wx.cloud.database();
-		const catImages = db.collection("catImages");
-		catImages
-			.add({
-				data: {
-					name: name,
-					files: files,
-					description: description,
-					updateTime: new Date().valueOf()
-				}
+		const catFood = db.collection("catFood");
+		catFood
+			.where({
+				name: name
 			})
+			.get()
 			.then(res => {
-				this.setData({
-					hasSubmit: true
-				});
-				wx.switchTab({
-					url: "../main/main"
-				});
+				const { data } = res;
+				if (data.length) {
+					let totalCost = data[0].cost + costNum;
+					let _id = data[0]._id;
+					catFood
+						.doc(_id)
+						.update({
+							data: {
+								cost: totalCost
+							}
+						})
+						.then(res => {
+							this.setData({
+								hasSubmit: true
+							});
+							wx.switchTab({
+								url: "../index/index"
+							});
+						});
+				} else {
+					catFood
+						.add({
+							data: {
+								name: name,
+								cost: costNum,
+								updateTime: new Date().valueOf()
+							}
+						})
+						.then(res => {
+							this.setData({
+								hasSubmit: true
+							});
+							wx.switchTab({
+								url: "../index/index"
+							});
+						});
+				}
 			});
 	},
 	/**

@@ -1,16 +1,10 @@
-<!-- miniprogram/pages/strayCat/strayCat.wxml -->
-<!-- 流浪猫信息登记 -->
+<!-- miniprogram/pages/addmiaomiao/addmiaomiao.wxml -->
+<!-- 妙妙日记 -->
 <view class="form">
-    <view class="form-item">
-        <view class="form-item-title-request">姓名</view>
-        <view class="form-item-body">
-            <input bindblur="bindNameBlur" placeholder="请输入姓名">{{name}}</input>
-        </view>
-    </view>
     <view class="form-item">
         <view class="form-item-title-request">描述</view>
         <view class="form-item-body">
-            <textarea class="form-item-body-text " bindblur="bindDescriptionBlur" auto-height="{{true}}" placeholder="请输入描述信息">
+            <textarea class="form-item-body-text" bindblur="bindDescriptionBlur" auto-height="{{true}}" placeholder="请输入描述信息">
                 {{description}}
             </textarea>
         </view>

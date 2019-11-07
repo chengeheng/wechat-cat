@@ -1,36 +1,33 @@
 {
 	"pages": [
 		"pages/main/main",
-		"pages/strayCat/strayCat",
+		"pages/catFood/catFood",
+		"pages/miaomiao/miaomiao",
 		"pages/index/index",
-		"pages/userConsole/userConsole",
-		"pages/storageConsole/storageConsole",
-		"pages/databaseGuide/databaseGuide",
-		"pages/addFunction/addFunction",
-		"pages/deployFunctions/deployFunctions",
-		"pages/chooseLib/chooseLib",
-		"pages/openapi/openapi",
-		"pages/openapi/serverapi/serverapi",
-		"pages/openapi/callback/callback",
-		"pages/openapi/cloudid/cloudid",
-		"pages/im/im",
-		"pages/im/room/room"
+		"pages/addmiaomiao/addmiaomiao",
+		"pages/strayCat/strayCat",
+		"pages/chooseLib/chooseLib"
 	],
 	"window": {
 		"backgroundColor": "#F6F6F6",
 		"backgroundTextStyle": "light",
 		"navigationBarBackgroundColor": "#F6F6F6",
-		"navigationBarTitleText": "云开发 QuickStart",
 		"navigationBarTextStyle": "black"
 	},
 	"tabBar": {
-		"custom": true,
+		"custom": false,
 		"list": [
 			{
 				"pagePath": "pages/main/main",
 				"iconPath": "images/tabbar/main.png",
 				"selectedIconPath": "images/tabbar/main.png",
 				"text": "主页"
+			},
+			{
+				"pagePath": "pages/miaomiao/miaomiao",
+				"iconPath": "images/tabbar/user.png",
+				"selectedIconPath": "images/tabbar/user.png",
+				"text": "妙妙日记"
 			},
 			{
 				"pagePath": "pages/index/index",
