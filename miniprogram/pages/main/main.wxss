@@ -117,3 +117,8 @@
 	line-height: 80rpx;
 	width: 40%;
 }
+
+.fund-loading {
+	width: 100%;
+	flex: 1;
+}

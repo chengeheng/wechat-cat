@@ -5,6 +5,7 @@ Page({
 	 */
 	data: {
 		bannerImages: [],
+		loading: false,
 		indicatorDots: true,
 		vertical: true,
 		autoplay: true,
@@ -15,6 +16,7 @@ Page({
 	},
 
 	loadData: function() {
+		this.setData({ loading: true });
 		// 获取用户信息
 		wx.getSetting({
 			success: res => {
@@ -56,6 +58,7 @@ Page({
 				catLists: data
 			});
 		});
+		this.setData({ loading: false });
 	},
 	/**
 	 * 生命周期函数--监听页面加载
