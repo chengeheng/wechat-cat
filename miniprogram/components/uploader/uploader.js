@@ -221,7 +221,7 @@ Component({
                                     oldFiles[len + index].loading = false;
                                 });
                                 _this.setData({ files: oldFiles, currentFiles: newFiles });
-                                _this.triggerEvent('success', json, {});
+                                _this.triggerEvent('success', newFiles, {});
                             } else {
                                 _this.triggerEvent('fail', { type: 3, errMsg: 'upload file fail, urls not found' }, {});
                             }

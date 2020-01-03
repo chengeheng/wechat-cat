@@ -5,6 +5,7 @@ Page({
    */
   data: {
     bannerImages: [],
+    loading: false,
     indicatorDots: true,
     vertical: true,
     autoplay: true,
@@ -14,10 +15,8 @@ Page({
     fundList: []
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
+  loadData: function() {
+    this.setData({ loading: true });
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -43,7 +42,6 @@ Page({
     const catFood = db.collection("catFood");
     catFood.get().then(res => {
       const { data } = res;
-      console.log(data);
       this.setData({
         fundList: data
       });
@@ -60,7 +58,12 @@ Page({
         catLists: data
       });
     });
+    this.setData({ loading: false });
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -70,7 +73,10 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {},
+  onShow: function() {
+    const me = this;
+    me.loadData();
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -85,7 +91,10 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {},
+  onPullDownRefresh: function() {
+    const me = this;
+    me.loadData();
+  },
 
   /**
    * 页面上拉触底事件的处理函数

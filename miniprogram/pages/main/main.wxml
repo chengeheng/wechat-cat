@@ -10,7 +10,8 @@
         </swiper>
     </view>
     <!-- 资助对象 -->
-    <view class="fund">
+    <loading wx:if="{{loading}}" duration="{{1000}}">加载中...</loading>
+    <view wx:if="{{!loading}}" class="fund">
         <view class="fund_title">
             <view class="fund_title_body">资助对象</view>
         </view>
@@ -29,7 +30,7 @@
         </block>
     </view>
     <!-- 众筹 -->
-    <view class="fund">
+    <view class="fund" wx:if="{{!loading}}">
         <view class="fund_title">
             <view class="fund_title_body">众筹详情</view>
         </view>

@@ -73,9 +73,7 @@ Page({
 		});
 	},
 	uploadSuccess(e) {
-		let files = e.detail.map(item => ({
-			url: item.fileID
-		}));
+		let files = e.detail;
 		this.setData({
 			files: files
 		});
